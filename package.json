@@ -4,7 +4,8 @@
   "description": "Benchmarking tool for digital preservation",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "csvtojson public/questions/dobject.csv > public/questions/dobject.json"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/digital-scholarship/gyst#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "csvtojson": "^1.1.7",
     "express": "^4.15.3",
     "path": "^0.12.7"
   }
