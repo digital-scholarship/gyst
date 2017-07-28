@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const base58 = require('./base58.js');
 const path = require('path');
-const csv = require('csvtojson');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -24,9 +23,18 @@ app.get('/questions', function(rq, res){
 })
 
 
+app.get('/stats', function (rq, res){
+    // route to fetch and return stats - global average for each qn and country averages
+    res.send('stats')
+})
+
+
 app.post('/result', function (rq, res){
     res.send('hello workd')
         console.log('received : ' + rq.params)
+
+        // we will call the geoip service and store country
+        // a result will have an id, a base58 for short url, country, and answers
 })
 
 
