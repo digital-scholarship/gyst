@@ -25,6 +25,5 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "webpack": "^3.4.1"
   }
 }
