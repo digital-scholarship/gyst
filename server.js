@@ -8,20 +8,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function (rq, res){
-    // route to the homepage index.html
-    res.send('hello workd')
-})
 
-app.get('/result/:id', function (rq, res){
-    // route to the report for an id 
+
+// ************************************
+// ROUTES
+// ************************************
+app.get('/answers/:id', function (rq, res){
+    // send answers for an id 
     res.send('report' + rq.params.id)
 })
-
 app.get('/questions', function(rq, res){
     res.sendFile(__dirname + '/public/questions/dobject.json');
 })
-
 
 app.get('/stats', function (rq, res){
     // route to fetch and return stats - global average for each qn and country averages
@@ -29,7 +27,7 @@ app.get('/stats', function (rq, res){
 })
 
 
-app.post('/result', function (rq, res){
+app.post('/submit', function (rq, res){
     res.send('hello workd')
         console.log('received : ' + rq.params)
 
@@ -38,6 +36,7 @@ app.post('/result', function (rq, res){
 })
 
 
+// Start the server
 app.listen(8080, function (){
     console.log('listening on port 8080')
 })

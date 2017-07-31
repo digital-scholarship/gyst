@@ -1,4 +1,7 @@
 
+
+var answers; // hold the answers
+
 // our user interface is built on quesitons
 var Question = Backbone.Model.extend({
     // stuff in here
@@ -19,4 +22,5 @@ var quesitons = new Questions;
 
 console.log(questions)
 
-
+// Todo:
+// we
