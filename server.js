@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const base58 = require('./base58.js');
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -18,7 +18,7 @@ app.get('/answers/:id', function (rq, res){
     res.send('report' + rq.params.id)
 })
 app.get('/questions', function(rq, res){
-    res.sendFile(__dirname + '/public/questions/dobject.json');
+    res.sendFile(__dirname + '/app/questions/dobject.json');
 })
 
 app.get('/stats', function (rq, res){
